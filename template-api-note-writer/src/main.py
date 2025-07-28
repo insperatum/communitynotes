@@ -17,6 +17,10 @@ def _worker(
     Fetch and try to write and submit a note for one post.
     If `dry_run` is True, do not submit notes to the API, just print them to the console.
     """
+    print("== Processing post:", post_with_context.post.post_id, "==")
+    print("", post_with_context.post.text)
+    print()
+    
     note_result: NoteResult = research_post_and_write_note(post_with_context)
 
     log_strings: List[str] = ["-" * 20, f"Post: {post_with_context.post.post_id}", "-" * 20]
